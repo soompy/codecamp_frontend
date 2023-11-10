@@ -8,6 +8,5 @@ export default function 나만의페이지() {
             <div>철수</div>
             <button>클릭하세요!!</button>
         </div>
-    )
-    
+    )    
 }
