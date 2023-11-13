@@ -9,7 +9,3 @@ export const 나의그래프큐엘셋팅 = gql`
         }
     }
 `
-
-export const 나의그래프큐엘셋팅2 = gql`
-    mutation...
-`

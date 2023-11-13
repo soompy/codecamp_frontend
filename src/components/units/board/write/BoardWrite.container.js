@@ -50,7 +50,7 @@ export default function BoardWrite() {
                 ccc={onChangeTitle}
                 ddd={onChangeContents}        
             />
-            <ChangeName />
+            {/* <ChangeName /> */}
             <div>$$$$$ 여기는 컨테이너입니다. $$$$$</div>
         </div>        
     )
