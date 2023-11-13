@@ -6,8 +6,8 @@ export default function graphqlMutationPage() {
     return (
         <div>
             <div>### 여기는 페이지입니다. ###</div>
-            <BoardWrite />
-            <div>### 여기는 페이지입니다. ###</div>
+            <BoardWrite qqq="철수" />
+            <div>###   여기는 페이지입니다. ###</div>
         </div>
     )
 }

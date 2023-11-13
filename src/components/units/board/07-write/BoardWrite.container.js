@@ -12,6 +12,8 @@ import BoardWriteUI from "./BoardWrite.presenter" // export default로 한개만
 */
 
 export default function BoardWrite(props) {
+    const [isActive, setIsActive] = useState(false)
+
     const [writer, setWriter] = useState()
     const [title, setTitle] = useState()
     const [contents, setContents] = useState()
@@ -30,25 +32,38 @@ export default function BoardWrite(props) {
     }
 
     const onChangeWriter = (event) => {
-        setWriter(event.target.value)
+        setWriter(event.target.value)        
+        
+        if(event.target.value && title && contents) {
+            setIsActive(true)
+        }
     }
 
     const onChangeTitle = (event) => {
         setTitle(event.target.value)
+        
+        if(writer && event.target.value && contents) {
+            setIsActive(true)
+        }
     }
 
     const onChangeContents = (event) => {
         setContents(event.target.value)
+
+        if(writer && title && event.target.value) {
+            setIsActive(true)
+        }
     }
 
     return (
         <div>
             <div>$$$$$ 여기는 컨테이너입니다. $$$$$</div>
             <BoardWriteUI 
-                aaa={onClickSubmit}
-                bbb={onChangeWriter}
-                ccc={onChangeTitle}
-                ddd={onChangeContents}        
+                onClickSubmit={onClickSubmit}
+                onChangeWriter={onChangeWriter}
+                onChangeTitle={onChangeTitle}
+                onChangeContents={onChangeContents}     
+                isActive={isActive}   
             />
             {/* <ChangeName /> */}
             <div>$$$$$ 여기는 컨테이너입니다. $$$$$</div>

@@ -6,12 +6,12 @@ export default function BoardWriteUI(props) {
         <div>
             <div>@@@ 여기는 프리젠터입니다. @@@</div>
             <div>                
-                작성자: <RedInput type="text" onChange={props.bbb} />
-                제목: <RedInput type="text" onChange={props.ccc} />
-                내용: <RedInput type="text" onChange={props.ddd} />
+                작성자: <RedInput type="text" onChange={props.onChangeWriter} />
+                제목: <RedInput type="text" onChange={props.onChangeTitle} />
+                내용: <RedInput type="text" onChange={props.onChangeContents} />
                 <BlueButton 
-                    onClick={props.aaa}
-                    mycolor="yellow"
+                    onClick={props.onClickSubmit}
+                    isActive={props.isActive}
                 >
                     GRAPHQL-API 요청하기
                 </BlueButton>
