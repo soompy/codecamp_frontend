@@ -1,15 +1,17 @@
 import { useQuery, gql } from "@apollo/client"
 
-const FETCH_BOARD = gql`
-    query{
-        fetchBoard(number:2){
-            number
-            writer
-            title
-            contents
-        }
+export const FETCH_BOARD = gql`
+  query fetchBoard($boardId: ID!) {
+    fetchBoard(boardId: $boardId) {
+      _id
+      writer
+      title
+      contents
+      createdAt
     }
-`
+  }
+`;
+
 
 export default function StaticRoutingMovedPage() {
     const { data } = useQuery(FETCH_BOARD)

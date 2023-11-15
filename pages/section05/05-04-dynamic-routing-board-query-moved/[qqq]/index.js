@@ -1,15 +1,18 @@
 import { useQuery, gql } from "@apollo/client"
 import { useRouter } from 'next/router'
-const FETCH_BOARD = gql`
-    query fetchBoard($number: Int){
-        fetchBoard(number: $number){
-            number
-            writer
-            title
-            contents
-        }
+
+export const FETCH_BOARD = gql`
+  query fetchBoard($boardId: ID!) {
+    fetchBoard(boardId: $boardId) {
+      _id
+      writer
+      title
+      contents
+      createdAt
     }
-`
+  }
+`;
+
 
 export default function StaticRoutingMovedPage() {
     const router = useRouter()
