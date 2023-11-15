@@ -1,11 +1,9 @@
 import { gql } from "@apollo/client"
 
 export const 나의그래프큐엘셋팅 = gql`
-    mutation createBoard($writer: String, $title: String, $contents: String) {
-        createBoard(writer: $writer, title: $title, contents: $contents) {
+    mutation createBoard($createBoardInput: CreateBoardInput!){
+            createBoard(createBoardInput: $createBoardInput){
             _id
-            number
-            message
         }
     }
 `
