@@ -21,7 +21,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/section10/10-04-graphql-codegen-mutation/index.js"  ],
   "exclude": [
     "node_modules"
   ]

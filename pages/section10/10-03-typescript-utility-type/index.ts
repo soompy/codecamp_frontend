@@ -40,6 +40,7 @@ export interface IProfile {
     candy: number // 선언병합으로 추가됨 (interface만 선언병합이 가능)
 }
 
+// 배운것 응용
 let profile: Partial<IProfile> = {
     candy: 10
 }
