@@ -1,8 +1,9 @@
 // 모든 페이지에 적용되는 공통 설정
 // import '@/styles/globals.css'
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client"
+import { AppProps } from "next/app"
 
-export default function App({ Component }) {
+export default function App({ Component }: AppProps) {
 
   // 그래프큐엘 세팅
   const client = new ApolloClient({
