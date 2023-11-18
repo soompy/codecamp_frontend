@@ -1,5 +1,5 @@
+/**
 export default function TypescriptPage() {
-
     // 타입추론
     let aaa = "안녕하세요"
     aaa = 3
@@ -63,3 +63,4 @@ export default function TypescriptPage() {
 
     return<></>
 }
+ */
