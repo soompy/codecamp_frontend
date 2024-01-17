@@ -1,4 +1,5 @@
 import { useQuery, gql } from "@apollo/client"
+import Checkbox from "./checkbox"
 
 const FETCH_BOARDS = gql`
     query{
@@ -15,15 +16,6 @@ export default function StaticRoutingMovedPage() {
     
     const qqq1 = () => {
         alert("클릭 1번")
-    } 
-
-    const qqq2 = () => {
-        alert("클릭 2번")
-    }
-
-    const qqq3 = (event) => {
-        event.stopPropagation()
-        alert("클릭 3번")
     }
     
     const qqq4 = (event) => {
@@ -35,9 +27,7 @@ export default function StaticRoutingMovedPage() {
         <div>
             {data?.fetchBoards.map((el: any) => ( 
                 <div id={el.writer} onClick={qqq1}>
-                    <span onClick={qqq2}>
-                        <input type="checkbox" onClick={qqq3} />
-                    </span>
+                    <Checkbox />
                     <span style={{margin: "10px"}} onClick={qqq4}>{el.writer}</span>
                     <span style={{margin: "10px"}}>{el.title}</span>
                     <span style={{margin: "10px"}}>{el.contents}</span>                    
