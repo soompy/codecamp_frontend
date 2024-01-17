@@ -3,7 +3,7 @@
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client"
 import { AppProps } from "next/app"
 
-export default function App({ Component }: AppProps) {
+export default function App({ Component }: AppProps): JSX.Element {
 
   // 그래프큐엘 세팅
   const client = new ApolloClient({
