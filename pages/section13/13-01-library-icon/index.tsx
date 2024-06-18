@@ -1,5 +1,5 @@
 import { UpCircleOutlined } from "@ant-design/icons";
 
-export default function LibraryIconPage() {
+export default function LibraryIconPage(): JSX.Element {
     return <UpCircleOutlined />
 }
