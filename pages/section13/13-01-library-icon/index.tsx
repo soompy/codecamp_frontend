@@ -7,5 +7,9 @@ const MyIcon = styled(UpCircleOutlined)`
 `;
 
 export default function LibraryIconPage(): JSX.Element {
-    return <MyIcon />;
+    const onClickDelete = (event): void => {
+        console.log(event.target.id)
+    };
+
+    return <MyIcon id="삭제할게시글ID" onClick={onClickDelete} />;
 }
