@@ -15,9 +15,9 @@ export default function App(): JSX.Element {
 // const onChangeStar = (value) => setValue(value);
 
   return (
-    // <Rate onChange={onChangeStar} value={value} /> // 1단계 방식
-    // <Rate onChange={onChangeStar} value={value} /> // 2단계 방식
-    <Rate onChange={(value) => setValue(value)} value={value} /> // 3단계 방식
-    //   return <Rate onChange={setValue} value={value} />;
+    // <Rate onChange={onChangeStar} value={value} />               // 1단계 방식
+    // <Rate onChange={onChangeStar} value={value} />               // 2단계 방식
+    // <Rate onChange={(value) => setValue(value)} value={value} /> // 3단계 방식
+    <Rate onChange={setValue} value={value} />                      // 4단계 방식
   )
 };
