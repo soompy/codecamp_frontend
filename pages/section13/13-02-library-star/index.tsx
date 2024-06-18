@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { Flex, Rate } from 'antd';
+import { Rate } from 'antd';
 
 // const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 
-const App: React.FC = () => {
+export default function App(): JSX.Element {
   const [value, setValue] = useState(3);
-  return (
-    <Flex gap="middle" vertical>
-      <Rate tooltips={desc} onChange={setValue} value={value} />
-      {/* {value ? <span>{desc[value - 1]}</span> : null} */}
-    </Flex>
-  );
-};
 
-export default App;
+//   === 1단계 방식 ===
+  const onChangeStar = (value: number): void => {
+    setValue(value);
+  }
+
+  return (
+    <Rate onChange={onChangeStar} value={value} /> // 1단계
+    //   return <Rate onChange={setValue} value={value} />;
+  )
+};
