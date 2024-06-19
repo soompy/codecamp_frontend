@@ -7,27 +7,19 @@ export default function ModalAlertPage(): JSX.Element {
 
     const [isOpen, setIsOpen] = useState(false)
 
-    const showModal = (): void => {
+    const onToggleModal = (): void => {
         // 여기서 prev는 false다.
         setIsOpen((prev) => !prev);
-    }
-
-    const handleOk = (): void => {
-        setIsOpen((prev) => !prev);
-    }
-
-    const handleCancel = (): void => {
-        setIsOpen((prev) => !prev);
-    }
+    }   
 
     const handleComplete = (data: Address): void => {
         console.log(data);
-        setIsOpen((prev) => !prev);
+        onToggleModal();
     }
 
     return (
         <>
-            <button onClick={showModal}>모달창 열기!!</button>
+            <button onClick={onToggleModal}>모달창 열기!!</button>
             {/* 모달 종료 방식 - 1. 모달 숨기는 방법(ex. 이력서 등) */}
             {/* <Modal
                 open={isOpen}
@@ -41,8 +33,8 @@ export default function ModalAlertPage(): JSX.Element {
             {isOpen && (
                 <Modal
                     open={true}
-                    onOk={handleOk}
-                    onCancel={handleCancel}
+                    onOk={onToggleModal}
+                    onCancel={onToggleModal}
                 >
                     <DaumPostcodeEmbed onComplete={handleComplete}  />
                 </Modal>
