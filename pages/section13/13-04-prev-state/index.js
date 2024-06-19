@@ -11,6 +11,8 @@ export default function CounterLetDocumentPage() {
         // setCount(count + 1)
         // setCount(count + 1)
 
+
+        // 임시 저장공간 활용
         setCount((prev) => prev + 1);
         setCount((prev) => prev + 1);
         setCount((prev) => prev + 1);
