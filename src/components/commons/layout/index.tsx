@@ -13,9 +13,14 @@ export default function Layout(props: ILayoutProps): JSX.Element {
             <LayoutHeader />
             <LayoutBanner />
             <LayoutNavigation />
-            <div>
-                {props.children}
-            </div>
+            <div style={{ height: "500px", display: "flex " }}>
+                <div style={{ width: "30%", backgroundColor: "orange" }}>
+                    사이드바
+                </div>
+                <div style={{ width: "70%" }}>
+                    {props.children}
+                </div>
+            </div>            
             <LayoutFooter />                   
         </>
     );
