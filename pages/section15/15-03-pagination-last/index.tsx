@@ -72,7 +72,7 @@ export default function StaticRoutingMovedPage(): JSX.Element {
 
       <span onClick={onClickPrevPage}>이전페이지</span>
       {new Array(10).fill(1).map((_, index) =>
-        index + startPage <= lastPage ?         
+        index + startPage <= lastPage &&         
 
         (<span
           key={index + startPage}
@@ -81,7 +81,7 @@ export default function StaticRoutingMovedPage(): JSX.Element {
           style={{ margin: "5px" }}
         >
           {index + startPage}
-        </span>) : (<span></span>)
+        </span>)
       )}
       <span onClick={onClickNextPage}>다음페이지</span>
     </div>
