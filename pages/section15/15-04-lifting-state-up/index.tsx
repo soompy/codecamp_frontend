@@ -5,7 +5,7 @@ import Child2 from "../../../src/components/units/15-lifting-state-up/Child2"
 export default function CounterLetDocumentPage(): JSX.Element {
     const [ count, setCount ] = useState(0);
 
-    const onClickCount = () => {
+    const onClickCount = (): void => {
       setCount((prev) => prev + 1);
     };
 
@@ -13,7 +13,7 @@ export default function CounterLetDocumentPage(): JSX.Element {
         <div>
             <Child1 count={count} setCount={setCount} />
             <div>=========================</div>
-            <Child2 count={count} setCount={onClickCount} />
+            <Child2 count={count} onClickCount={onClickCount} />
         </div>        
     )
 }
