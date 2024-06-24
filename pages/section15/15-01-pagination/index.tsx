@@ -38,11 +38,17 @@ export default function StaticRoutingMovedPage():JSX.Element {
                 </div>                
             ))}
 
-            {[1, 1, 1].map((_, index) => (
+            {new Array(10).fill(1).map((_, index) => (
                 <span key={index + 1} id={String(index + 1)} onClick={onClickPage}>
                     {index + 1}
                 </span>
             ))}
+
+            {/* {[1, 1, 1].map((_, index) => (
+                <span key={index + 1} id={String(index + 1)} onClick={onClickPage}>
+                    {index + 1}
+                </span>
+            ))} */}
         </div>
     );
 }
