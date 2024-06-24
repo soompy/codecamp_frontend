@@ -23,18 +23,11 @@ export default function StaticRoutingMovedPage():JSX.Element {
     console.log(data?.fetchBoards)
 
 
-    // refetch하기
-    const onClickPage1 = (event: MouseEvent<HTMLSpanElement>): void => {
-        void refetch({ page: Number(event.currentTarget.id) });
-    };
     
-    const onClickPage2 = (event: MouseEvent<HTMLSpanElement>): void => {
+    const onClickPage = (event: MouseEvent<HTMLSpanElement>): void => {
         void refetch({ page: Number(event.currentTarget.id) });
     };
-
-    const onClickPage3 = (event: MouseEvent<HTMLSpanElement>): void => {
-        void refetch({ page: Number(event.currentTarget.id) });
-    };
+   
 
     return (
         <div>
@@ -45,9 +38,11 @@ export default function StaticRoutingMovedPage():JSX.Element {
                 </div>                
             ))}
 
-            <span id="1" onClick={onClickPage1}>1</span>
-            <span id="2" onClick={onClickPage2}>2</span>
-            <span id="3" onClick={onClickPage3}>3</span>
+            {[1, 2, 3].map((el) => (
+                <span key={el} id={String(el)} onClick={onClickPage}>
+                    {el}
+                </span>
+            ))}
         </div>
     );
 }
