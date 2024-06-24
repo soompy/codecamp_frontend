@@ -24,16 +24,16 @@ export default function StaticRoutingMovedPage():JSX.Element {
 
 
     // refetch하기
-    const onClickPage1 = (): void => {
-        void refetch({ page: 1 });
+    const onClickPage1 = (event: MouseEvent<HTMLSpanElement>): void => {
+        void refetch({ page: Number(event.currentTarget.id) });
     };
     
-    const onClickPage2 = (): void => {
-        void refetch({ page: 2 });
+    const onClickPage2 = (event: MouseEvent<HTMLSpanElement>): void => {
+        void refetch({ page: Number(event.currentTarget.id) });
     };
 
-    const onClickPage3 = (): void => {
-        void refetch({ page: 3 });
+    const onClickPage3 = (event: MouseEvent<HTMLSpanElement>): void => {
+        void refetch({ page: Number(event.currentTarget.id) });
     };
 
     return (
@@ -45,9 +45,9 @@ export default function StaticRoutingMovedPage():JSX.Element {
                 </div>                
             ))}
 
-            <span onClick={onClickPage1}>1</span>
-            <span onClick={onClickPage2}>2</span>
-            <span onClick={onClickPage3}>3</span>
+            <span id="1" onClick={onClickPage1}>1</span>
+            <span id="2" onClick={onClickPage2}>2</span>
+            <span id="3" onClick={onClickPage3}>3</span>
         </div>
     );
 }
