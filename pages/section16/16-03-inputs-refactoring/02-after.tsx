@@ -24,41 +24,29 @@ export default function graphqlMutationPage() {
     const onClickSubmit = async () => {
         const result = await 나의함수({
             variables: {    // variables 이게 $ 역할을 함
-                writer: writer,
-                title: title,
-                contents: contents
+                writer: inputs.writer,
+                title: inputs.title,
+                contents: inputs.contents
             }
         })
         console.log(result)
     }
 
-    const onChangeWriter = (event) => {
-        setInputs({
-            ...inputs,
-            [event.target.id]: event.target.value,
-        })
-    }
-
-    const onChangeTitle = (event) => {
-        setInputs({
-            ...inputs,
-            [event.target.id]: event.target.value,
-        })
-    }
-
-    const onChangeContents = (event) => {
-        setInputs({
-            ...inputs,
-            [event.target.id]: event.target.value,
+    const onChangeInputs = (event) => {
+        setInputs((prev) => {            
+            return {
+                ...prev,
+                [event.target.id]: event.target.value,
+            }
         })
     }
 
     // 한줄일 때 괄호() 필요 없음
     return (
         <div>
-            작성자: <input type="text" id="writer" onChange={onChangeWriter} />
-            제목: <input type="text" id="title" onChange={onChangeTitle} />
-            내용: <input type="text" id="contents" onChange={onChangeContents} />
+            작성자: <input type="text" id="writer" onChange={onChangeInputs} />
+            제목: <input type="text" id="title" onChange={onChangeInputs} />
+            내용: <input type="text" id="contents" onChange={onChangeInputs} />
             <button onClick={onClickSubmit}>GRAPHQL-API 요청하기</button>
         </div>        
     ) 
