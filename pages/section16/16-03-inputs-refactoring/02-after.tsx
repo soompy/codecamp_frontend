@@ -23,12 +23,8 @@ export default function graphqlMutationPage() {
 
     const onClickSubmit = async () => {
         const result = await 나의함수({
-            variables: {    // variables 이게 $ 역할을 함
-                writer: inputs.writer,
-                title: inputs.title,
-                contents: inputs.contents
-            }
-        })
+            variables: { ...inputs },
+        });
         console.log(result)
     }
 
