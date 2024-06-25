@@ -34,25 +34,22 @@ export default function graphqlMutationPage() {
 
     const onChangeWriter = (event) => {
         setInputs({
-            writer: event.target.value,
-            title: inputs.title,
-            contents: inputs.contents,
+            ...inputs,
+            [event.target.id]: event.target.value,
         })
     }
 
     const onChangeTitle = (event) => {
         setInputs({
-            writer: inputs.writer,
-            title: event.target.value,
-            contents: inputs.contents,
+            ...inputs,
+            [event.target.id]: event.target.value,
         })
     }
 
     const onChangeContents = (event) => {
         setInputs({
-            writer: inputs.writer,
-            title: inputs.title,
-            contents: event.target.value,
+            ...inputs,
+            [event.target.id]: event.target.value,
         })
     }
 
