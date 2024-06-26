@@ -33,12 +33,12 @@ export default function FunctionalCounterPage():JSX.Element {
     });
 
     // 2. useEffect 잘못된 사용법(1. 추가렌더링, 2. 무한루프)
-        //  1.
+        //  1. 추가렌더링
     // useEffect(() => {
     //     setWriter()
     // }, [count])
 
-        //  2.
+        //  2. 무한루프
     // useEffect(() => {
     //     setCount((prev) => prev + 1);
     // }, [count]);
