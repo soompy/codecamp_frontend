@@ -5,13 +5,13 @@ export default class ClassCounterPage extends Component {
         count: 0,
     };
 
-    onClickCountUp(): void {
+    onClickCountUp = (): void => {
         console.log(this.state.count);
 
-        // this.setState({
-        //     count: 1,
-        // });
-    }
+        this.setState({
+            count: 1,
+        });
+    };
 
     render(): JSX.Element {
         return (
