@@ -5,6 +5,7 @@ import type {
   IQueryFetchBoardsArgs,
 } from "../../../src/commons/types/generated/types";
 import type { MouseEvent, ChangeEvent } from "react";
+import _ from 'lodash';
 
 const FETCH_BOARDS = gql`
   query fetchBoards($page: Int, $search: String) {
@@ -31,17 +32,18 @@ export default function StaticRoutingMovedPage(): JSX.Element {
   };
 
   const onchangeSearch = (event: ChangeEvent<HTMLInputElement>): void => {
-    setSearch(event.currentTarget.value);
+    // setSearch(event.currentTarget.value);
+    void refetch({ search: event.currentTarget.value, page: 1 });
   };
 
-  const onClickSearch = (): void => {
-    void refetch({ search, page: 1 });
-  };
+  //   const onClickSearch = (): void => {
+  //     void refetch({ search, page: 1 });
+  //   };
 
   return (
     <div>
       검색어 입력: <input type="text" onChange={onchangeSearch} />
-      <button onClick={onClickSearch}>검색하기</button>
+      {/* <button onClick={onClickSearch}>검색하기</button> */}
       {data?.fetchBoards.map((el) => (
         <div key={el._id}>
           <span style={{ margin: "10px" }}>{el.title}</span>
