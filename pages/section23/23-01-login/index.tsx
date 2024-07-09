@@ -64,6 +64,44 @@ export default function LoginPage(): JSX.Element {
   };
   return (
     <>
+      {/* 
+
+    # Write your query or mutation here
+mutation {
+  createUser(createUserInput: {
+    email: "jih@a.com",
+    password: "12345",
+    name: "루이"
+  }) {
+    _id
+    email
+    name
+  }
+}
+
+
+mutation {
+  loginUser(email: "jih@a.com", password: "12345") {
+    accessToken
+  }
+}
+
+query {
+  fetchUserLoggedIn {
+    email
+    name
+  }
+}
+
+
+**HTTP Headers
+
+{
+  "Authorization": "Bearer eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjhjZTBiMTVkNmVhYTAwMjlmN2ZjYWUiLCJwZXJtaXNzaW9uIjowLCJpYXQiOjE3MjA1MDkwNjAsImV4cCI6MTcyMDUxMjY2MCwic3ViIjoiYWNjZXNzVG9rZW4ifQ.VMpFffgLk-tIV2akswCdHBjOqdpjOo9EAO2-4d-92QxeV0mAgk40ThyrKTDGb8G2Gda35VEFRmhovnKv2Kx6Ng"
+}
+        이메일 : 
+        비번 : 12345
+    */}
       이메일: <input type="text" onChange={onChangeEmail} />
       비밀번호 : <input type="password" onChange={onChangePassword} />
       <button onClick={onClickLogin}>로그인</button>
