@@ -55,56 +55,14 @@ export default function LoginPage(): JSX.Element {
       localStorage.setItem("accessToken", accessToken); // 임시 사용(나중에 지울 예정!!)
 
       // 3. 로그인 성공 페이지로 이동
-      void router.push("/section23/23-02-login-localstorage-success");
+      void router.push("/section23/23-03-login-check-success");
     } catch (error) {
-      if (error instanceof Error) alert(error.message);
-
-      // 예)
-      //   const date = new Date()
-      //   date instanceof Date
+      if (error instanceof Error) alert(error.message);     
     }
   };
   
   return (
-    <>
-      {/* 
-
-    # Write your query or mutation here
-mutation {
-  createUser(createUserInput: {
-    email: "jih@a.com",
-    password: "12345",
-    name: "루이"
-  }) {
-    _id
-    email
-    name
-  }
-}
-
-
-mutation {
-  loginUser(email: "jih@a.com", password: "12345") {
-    accessToken
-  }
-}
-
-query {
-  fetchUserLoggedIn {
-    email
-    name
-  }
-}
-
-
-**HTTP Headers
-
-{
-  "Authorization": "Bearer eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjhjZTBiMTVkNmVhYTAwMjlmN2ZjYWUiLCJwZXJtaXNzaW9uIjowLCJpYXQiOjE3MjA1MDkwNjAsImV4cCI6MTcyMDUxMjY2MCwic3ViIjoiYWNjZXNzVG9rZW4ifQ.VMpFffgLk-tIV2akswCdHBjOqdpjOo9EAO2-4d-92QxeV0mAgk40ThyrKTDGb8G2Gda35VEFRmhovnKv2Kx6Ng"
-}
-        이메일 : 
-        비번 : 12345
-    */}
+    <>      
       이메일: <input type="text" onChange={onChangeEmail} />
       비밀번호 : <input type="password" onChange={onChangePassword} />
       <button onClick={onClickLogin}>로그인</button>
