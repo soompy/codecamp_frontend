@@ -50,10 +50,11 @@ export default function LoginPage(): JSX.Element {
         alert("로그인에 실패했습니다! 다시 시도해 주세요!");
         return;
       }
-      setAccessToken(accessToken);      
+      setAccessToken(accessToken);
+      localStorage.setItem("accessToken", accessToken); // 임시 사용(나중에 지울 예정!!)
 
       // 3. 로그인 성공 페이지로 이동
-      void router.push("/section23/23-01-login-success");
+      void router.push("/section23/23-02-login-localstorage-success");
     } catch (error) {
       if (error instanceof Error) alert(error.message);
 
@@ -62,6 +63,7 @@ export default function LoginPage(): JSX.Element {
       //   date instanceof Date
     }
   };
+  
   return (
     <>
       {/* 
